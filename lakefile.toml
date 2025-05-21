@@ -1,0 +1,10 @@
+name = "MyMath"
+version = "0.1.0"
+defaultTargets = ["mymath"]
+
+[[lean_lib]]
+name = "MyMath"
+
+[[lean_exe]]
+name = "mymath"
+root = "Main"
