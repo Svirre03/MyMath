@@ -9,7 +9,7 @@ open MyMath.Function
 def isFinite {α : Type} (s : Indexedset α) :=
   ∃n : Nat, (∃φ : Fin n → s.index, Bijective φ)
 
-def card {α : Type} (s : Indexedset α) :=
+--def card {α : Type} (s : Indexedset α) :=
 
 
 noncomputable def eqvSet {α : Type} (s : Indexedset α) (h_isFinite : isFinite s) : Indexedset α where

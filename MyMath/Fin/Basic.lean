@@ -118,7 +118,6 @@ theorem eq_of_finToFinOpt_eq (a a' : Fin n) (h_less : n ≤ m) : @finToFinOpt n 
 
   exact Fin.eq_of_val_eq h_eq
 
-theorem eq_of_finToFin_eq (a a' : Fin n) (h_le : n ≤ m) : finToFin
 
 end Theorems
 
