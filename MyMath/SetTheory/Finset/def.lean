@@ -13,15 +13,20 @@ structure Finset (α : Type) where
 
 namespace Finset
 
+section Definitions
+
+variable {α : Type} (s t : Finset α)
+
 --Membership definition
-def Mem {α : Type} (s : Finset α) (a : α) : Prop :=
+def Mem (a : α) : Prop :=
   ∃n : Fin s.card, s.elems n = a
 
-def subFinset {α : Type} (s t : Finset α) : Prop :=
+def subFinset : Prop :=
   ∃f : Fin s.card → Fin t.card,  Function.Injective f ∧ (∀k : Fin s.card, t.elems (f k) = s.elems k)
 
-def eqv {α : Type} (s t : Finset α) : Prop :=
+def eqv : Prop :=
   ∃f : Fin s.card → Fin t.card, Function.Bijective f ∧ (∀k : Fin s.card, t.elems (f k) = s.elems k)
+
 
 --instances
 instance : Membership α (Finset α) where
@@ -30,8 +35,18 @@ instance : Membership α (Finset α) where
 instance : Coe (Finset α) (Set α) where
   coe s := fun x => x ∈ s
 
-theorem mem_eq_in {α : Type} (s : Finset α) (a : α) : Mem s a = (a ∈ s) :=
+end Definitions
+
+
+section RewriteTheorems
+
+variable {α : Type} (s t : Finset α)
+
+theorem mem_eq_in (a : α) : Mem s a = (a ∈ s) :=
   by
   rfl
+
+
+end RewriteTheorems
 
 end MyMath.SetTheory.Finset
