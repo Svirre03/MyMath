@@ -74,6 +74,19 @@ abbrev MyIndSet : Indexedset Nat where
 
 #eval MyIndSet.elems 3
 
+theorem three_in_MyIndSet : 3 ∈ MyIndSet :=
+  by
+  exists 3
+
+theorem MyIndSet_subs_self : MyIndSet ⊆ MyIndSet :=
+  by
+  exists id
+
+  apply And.intro
+  · exact Function.Injective.id
+  · intro i
+    rw[id]
+
 
 end Tests
 
