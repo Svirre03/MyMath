@@ -4,6 +4,8 @@ import MyMath.Fin.Fin
 
 namespace MyMath.SetTheory.Finset
 
+open Fin
+
 section Fold
 
 variable {α : Type} [Zero α] [Add α] (s : Finset α)

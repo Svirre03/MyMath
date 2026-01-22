@@ -1,5 +1,6 @@
 --Imports
 
+namespace MyMath.Fin
 
 --Sum over function from Fin n
 section Definitions
@@ -31,3 +32,6 @@ section Tests
 --#eval @Finsuml 100 Nat _ _ (fun a => a.val+1)
 
 end Tests
+
+
+end MyMath.Fin
