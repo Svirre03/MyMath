@@ -19,8 +19,8 @@ section Theorems
 variable {K V : Type} [Field K] [AbelianGroup V] [VectorSpace K V]
 
 --instance of Smul
-instance : SMul K V where
-  sMul := smul
+instance : HSMul K V V where
+  hSMul := smul
 
 --theorems to convert notation
 theorem eq_smul (r : K) (v : V) : r • v = smul r v := by rfl

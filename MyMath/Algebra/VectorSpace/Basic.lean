@@ -17,14 +17,14 @@ theorem zero_smul (v : V) : (0 : K) • v = (0 : V) :=
     by
     rw[← add_smul, Monoid.add_zero]
   rw[Monoid.add_assoc] at h
-  rw[Group.add_neg (0 • v)] at h
+  rw[Group.add_neg (0•v)] at h
   rw[Monoid.add_zero] at h
   exact h
 
 @[simp]
 theorem smul_zero (r : K) : r • (0 : V) = (0 : V) :=
   by
-  have h : r • (0 : V) + r • 0 + -(r • 0) = r • 0 + -(r • 0) :=
+  have h : r • (0 : V) + r • (0 : V) + -(r • (0 : V)) = r • (0 : V) + -(r • (0 : V)) :=
     by
     rw[←smul_add, Monoid.add_zero]
   rw[Monoid.add_assoc, Group.add_neg, Monoid.add_zero] at h
